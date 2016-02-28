@@ -1,0 +1,27 @@
+{
+    "name" : "elchroy/ose",
+    "type": "library",
+    "homepage": "https://github.com/andela-celisha-wigwe/Open-Source-Evangelist",
+    "keywords": ["open","source", "evangelist", "open-source-evangelist"],
+    "description" : "This is an Open Source Evangelist Application. It ranks GitHub users according to criteria.",
+    "license" : "MIT",
+    "authors" : [
+                    {
+                        "name" : "andela-celisha-wigwe",
+                        "email" : "chijioke.elisha-wigwe@andela.com",
+                        "role" : "Software Developer"
+                    }
+                ],
+    "autoload" : {
+        "psr-4": {
+            "Elchroy\\OSE\\" : "src"
+        }
+    },
+    "require" : {
+        "php" : ">=5.5",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev" : {
+        "satooshi/php-coveralls" : "^1.0"
+    }
+}
