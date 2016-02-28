@@ -98,13 +98,13 @@ class Evangelist
 
     public function level()
     {
-      $repos = $this->numPublicRepos();
+        $repos = $this->numPublicRepos();
         if ($repos >= 0 && $repos <= 10) {
-        // if( in_array($this->numPublicRepos, range(1,10))) {
+            // if( in_array($this->numPublicRepos, range(1,10))) {
             return $level = 1;
         }
         if ($repos >= 11 && $repos <= 20) {
-        // if( in_array($this->numPublicRepos, range(1,10))) {
+            // if( in_array($this->numPublicRepos, range(1,10))) {
             return $level = 2;
         }
         if ($repos >= 21) {
