@@ -8,7 +8,7 @@ class NoMethodException extends \Exception
 
     public function __construct($method)
     {
-        set_exception_handler(array($this, 'catchException'));
+        set_exception_handler([$this, 'catchException']);
         $this->message = "Method Error: '$method'. Probably the user does not have this feature.";
     }
 
