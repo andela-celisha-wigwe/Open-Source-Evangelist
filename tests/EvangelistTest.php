@@ -64,4 +64,27 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($d[1], $result);
         }
     }
+
+
+    public function testRankFunctionWorksFordifferentCases()
+    {
+        $newEvangelist = new Evangelist('roy');
+        $data = array(
+                [1, 1],
+                [5, 1],
+                [10, 1],
+                [11, 2],
+                [16, 2],
+                [20, 2],
+                [21, 3],
+                [30, 3],
+                [100000, 3],
+            );
+        foreach ($data as $d) {
+            $newEvangelist->user->public_repos = $d[0];
+            $level = $newEvangelist->level();
+            $this->assertEquals($d[1], $level);
+        }
+    }
+
 }
