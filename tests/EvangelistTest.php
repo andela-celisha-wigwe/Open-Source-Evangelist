@@ -1,18 +1,19 @@
 <?php
+
 use Elchroy\OSE\Evangelist;
-use Elchroy\OSE\NoMethodException;
 
 class EvangelistTest extends PHPUnit_Framework_TestCase
 {
     // public $user;
-    public $data = array(
+    public $data = [
                 ['name', 'Prosper Otemuyiwa'],
                 ['numPublicRepos', 62],
                 ['status', 'Yeah, I crown you Senior Evangelist. Thanks for making the world a better place'],
                 ['rank', 'Senior Evangelist'],
                 ['level', 3],
-            );
+            ];
     public $evangelist;
+
     public function setUp()
     {
         $this->evangelist = new Evangelist('unicodeveloper');
@@ -20,7 +21,6 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
 
     public function testGuzzleHttpFetchIsPositive()
     {
-
     }
 
     public function testMagicMethodGetCallsTheGivenFunctionOrReturnsNoMethodException()
@@ -47,7 +47,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
     public function testNameFunctionReturnTheNameOfTheGitHubUser()
     {
         $name = $this->evangelist->name();
-        $this->assertEquals("Prosper Otemuyiwa", $name);
+        $this->assertEquals('Prosper Otemuyiwa', $name);
     }
 
     public function testNumOfPublicReposFunctionWorks()
@@ -64,5 +64,4 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($d[1], $result);
         }
     }
-
 }
