@@ -2,24 +2,21 @@
 
 namespace Elchroy\OSE;
 
-
 // require '../vendor/autoload.php';
 use GuzzleHttp\Client;
-use Elchroy\OSE\NoMethodException;
 
 /**
- * This is the Envagelist Class of GitHub.com users. It manages and ranks users based on certain criteria
- *
+ * This is the Envagelist Class of GitHub.com users. It manages and ranks users based on certain criteria.
  */
 class Evangelist
 {
     public $user;
 
-    public $ranks = array(
-            1 => "Junior Evangelist",
-            2 => "Associate Evanlegist",
-            3 => "Senior Evangelist",
-        );
+    public $ranks = [
+            1 => 'Junior Evangelist',
+            2 => 'Associate Evanlegist',
+            3 => 'Senior Evangelist',
+        ];
     public $repos;
 
     public $userData = '{
@@ -57,16 +54,16 @@ class Evangelist
 
     public function __construct($username)
     {
-        $client = new Client;
+        $client = new Client();
         // $client->request('GET', "https://api.github.com/users/$username")->getBody();
         // $this->user = json_decode($client->request('GET', "https://api.github.com/users/$username")->getBody());
-        $this->user =  json_decode($this->userData);
+        $this->user = json_decode($this->userData);
     }
 
     public function __get($func)
     {
-      // return method_exists($this, $func) ? call_user_func(array($this, $func)) : $this->throwNoMethodException($func);
-      return method_exists($this, $func) ? call_user_func(array($this, $func)) : $this->useProperties($func);
+        // return method_exists($this, $func) ? call_user_func(array($this, $func)) : $this->throwNoMethodException($func);
+      return method_exists($this, $func) ? call_user_func([$this, $func]) : $this->useProperties($func);
     }
 
     public function useProperties($property)
@@ -81,7 +78,7 @@ class Evangelist
 
     public function properties()
     {
-      return array_keys( (array) $this->user);
+        return array_keys((array) $this->user);
     }
 
     public function numPublicRepos()
@@ -102,11 +99,11 @@ class Evangelist
     public function level()
     {
         if ($this->numPublicRepos() >= 0 && $this->numPublicRepos() <= 10) {
-        // if( in_array($this->numPublicRepos, range(1,10))) {
+            // if( in_array($this->numPublicRepos, range(1,10))) {
             return $rank = 1;
         }
         if ($this->numPublicRepos() >= 11 && $this->numPublicRepos() <= 20) {
-        // if( in_array($this->numPublicRepos, range(1,10))) {
+            // if( in_array($this->numPublicRepos, range(1,10))) {
             return $rank = 2;
         }
         if ($this->numPublicRepos() >= 21) {
@@ -116,13 +113,12 @@ class Evangelist
 
     public function hasProperty($property)
     {
-      return (bool) in_array($property, $this->properties());
+        return (bool) in_array($property, $this->properties());
     }
-
 
     private function throwNoMethodException($method)
     {
-      // try {
+        // try {
       //   throw new NoMethodException($method);
       // } catch (NoMethodException $e) {
       //   return $e->getMessage();
@@ -130,7 +126,6 @@ class Evangelist
 
       throw new NoMethodException($method);
     }
-
 }
 
 // $evan = new Evangelist('unicodeveloper');
