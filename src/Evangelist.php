@@ -93,21 +93,22 @@ class Evangelist
 
     public function rank()
     {
-        return $this->ranks[$this->level];
+        return $this->ranks[$this->level()];
     }
 
     public function level()
     {
-        if ($this->numPublicRepos() >= 0 && $this->numPublicRepos() <= 10) {
-            // if( in_array($this->numPublicRepos, range(1,10))) {
-            return $rank = 1;
+      $repos = $this->numPublicRepos();
+        if ($repos >= 0 && $repos <= 10) {
+        // if( in_array($this->numPublicRepos, range(1,10))) {
+            return $level = 1;
         }
-        if ($this->numPublicRepos() >= 11 && $this->numPublicRepos() <= 20) {
-            // if( in_array($this->numPublicRepos, range(1,10))) {
-            return $rank = 2;
+        if ($repos >= 11 && $repos <= 20) {
+        // if( in_array($this->numPublicRepos, range(1,10))) {
+            return $level = 2;
         }
-        if ($this->numPublicRepos() >= 21) {
-            return $rank = 3;
+        if ($repos >= 21) {
+            return $level = 3;
         }
     }
 
