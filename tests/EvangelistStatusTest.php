@@ -1,7 +1,6 @@
 <?php
 
 use Elchroy\OSE\Evangelist;
-
 use Elchroy\OSE\EvangelistStatus;
 
 class EvangelistStatusTest extends PHPUnit_Framework_TestCase
