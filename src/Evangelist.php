@@ -3,6 +3,7 @@
 namespace Elchroy\OSE;
 
 use GuzzleHttp\Client;
+use Elchroy\OSE\EvangelistStatus;
 
 /**
  * This is the Envagelist Class of GitHub.com users. It manages and ranks users based on certain criteria.
@@ -10,8 +11,6 @@ use GuzzleHttp\Client;
 class Evangelist
 {
     public $user;
-
-    public $repos;
 
     public function __construct($username)
     {
@@ -50,7 +49,7 @@ class Evangelist
         return array_keys((array) $this->user);
     }
 
-    public function numPublicRepos()
+    public function repos()
     {
         return $this->user->public_repos;
     }
@@ -67,7 +66,7 @@ class Evangelist
 
     public function level()
     {
-        $repos = $this->numPublicRepos();
+        $repos = $this->repos();
         if ($repos >= 0 && $repos <= 10) {
             return $level = 1;
         }
