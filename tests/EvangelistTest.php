@@ -56,7 +56,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
      */
     public function testCallMagicMethodFailsIfTheMissingFunctionIsNotAPropertyInTheUserProperties()
     {
-        $this->evangelist->noProperty;
+        $this->evangelist->noProperty();
     }
 
     public function testNameFunctionReturnsTheNameOfTheGitHubUser()
