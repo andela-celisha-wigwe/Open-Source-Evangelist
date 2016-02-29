@@ -4,23 +4,18 @@ use Elchroy\OSE\Evangelist;
 
 class EvangelistTest extends PHPUnit_Framework_TestCase
 {
-    // public $user;
     public $data = [
-                ['name', 'Prosper Otemuyiwa'],
-                ['numPublicRepos', 62],
-                ['status', 'Yeah, I crown you Senior Evangelist. Thanks for making the world a better place'],
-                ['rank', 'Senior Evangelist'],
-                ['level', 3],
+                ['name', 'Elisha-Wigwe Chijioke O.'],
+                ['numPublicRepos', 2],
+                ['status', 'Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist'],
+                ['rank', 'Junior Evangelist'],
+                ['level', 1],
             ];
     public $evangelist;
 
     public function setUp()
     {
-        $this->evangelist = new Evangelist('unicodeveloper');
-    }
-
-    public function testGuzzleHttpFetchIsPositive()
-    {
+        $this->evangelist = new Evangelist('andela-celisha-wigwe');
     }
 
     public function testMagicMethodGetCallsTheGivenFunctionOrReturnsNoMethodException()
@@ -35,25 +30,25 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Elchroy\OSE\NoMethodException
-     * @expectedExceptionMessage Method Error: 'vampireStatus'. Probably the user does not have this feature.
+     * @expectedExceptionMessage Method Error: 'noStatus' : andela-celisha-wigwe may not have this feature.
      *
      * @return [type] [description]
      */
     public function testGetMagicFunctionThrowsExceptionWhenTheMethodDoesNotExist()
     {
-        $this->evangelist->vampireStatus;
+        $this->evangelist->noStatus;
     }
 
     public function testNameFunctionReturnTheNameOfTheGitHubUser()
     {
         $name = $this->evangelist->name();
-        $this->assertEquals('Prosper Otemuyiwa', $name);
+        $this->assertEquals('Elisha-Wigwe Chijioke O.', $name);
     }
 
     public function testNumOfPublicReposFunctionWorks()
     {
         $repos = $this->evangelist->numPublicRepos();
-        $this->assertEquals(62, $repos);
+        $this->assertEquals(2, $repos);
     }
 
     public function testAllPublicFunctionsWork()
@@ -65,10 +60,11 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
         }
     }
 
+
     public function testRankFunctionWorksFordifferentCases()
     {
         $newEvangelist = new Evangelist('roy');
-        $data = [
+        $data = array(
                 [1, 1],
                 [5, 1],
                 [10, 1],
@@ -78,11 +74,12 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
                 [21, 3],
                 [30, 3],
                 [100000, 3],
-            ];
+            );
         foreach ($data as $d) {
             $newEvangelist->user->public_repos = $d[0];
             $level = $newEvangelist->level();
             $this->assertEquals($d[1], $level);
         }
     }
+
 }
