@@ -38,9 +38,25 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
      *
      * @return [type] [description]
      */
-    public function testGetMagicFunctionThrowsExceptionWhenTheMethodDoesNotExist()
+    public function testGetMagicMethodThrowsExceptionWhenTheMethodDoesNotExist()
     {
         $this->evangelist->noStatus;
+    }
+
+    public function testCallMagicMethodWorksIfTheMissingFunctionIsAPropertyInTheUserProperties()
+    {
+        $login = $this->evangelist->login();
+        $this->assertEquals('andela-celisha-wigwe', $login);
+    }
+
+    /**
+     * @expectedException Elchroy\OSE\NoMethodException
+     * @expectedExceptionMessage Method Error: 'noProperty' : andela-celisha-wigwe may not have this feature.
+     * @return [type] [description]
+     */
+    public function testCallMagicMethodFailsIfTheMissingFunctionIsNotAPropertyInTheUserProperties()
+    {
+        $this->evangelist->noProperty;
     }
 
     public function testNameFunctionReturnsTheNameOfTheGitHubUser()

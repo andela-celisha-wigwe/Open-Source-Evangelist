@@ -40,6 +40,12 @@ class Evangelist
         return method_exists($this, $func) ? call_user_func([$this, $func]) : $this->useProperties($func);
     }
 
+    /**
+     * __call Magic method - Call a user property if there is no defined method to return that particular user information.
+     * @param  string $method the method that does not exist but might exist among the list of all properties.
+     * @param  string $args   The argument to be passed to the $method, if the $method requires.
+     * @return [type]         The return value of calling the method with the arguments (if any). Otherwise throw an Exception.
+     */
     public function __call($method, $args)
     {
         return $this->has($method) ? $this->callUser($method) : $this->throwNoMethodException($method);
@@ -127,6 +133,7 @@ class Evangelist
         if ($repos >= 21) {
             return $level = 3;
         }
+
     }
 
     /**
