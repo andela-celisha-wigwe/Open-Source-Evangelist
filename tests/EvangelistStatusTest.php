@@ -5,9 +5,6 @@ use Elchroy\OSE\EvangelistStatus;
 
 class EvangelistStatusTest extends PHPUnit_Framework_TestCase
 {
-    // public $ranks = array(
-    //         3 => '',
-    //     );
     public function setUp()
     {
         $this->status = new EvangelistStatus('unicodeveloper');
@@ -15,6 +12,8 @@ class EvangelistStatusTest extends PHPUnit_Framework_TestCase
 
     public function testGetStatusFunctionWorks()
     {
-        $this->assertEquals('Yeah, I crown you Senior Evangelist. Thanks for making the world a better place', $this->status->getStatus());
+        $expectedStatus = 'Yeah, I crown you Senior Evangelist. Thanks for making the world a better place';
+
+        $this->assertEquals($expectedStatus, $this->status->getStatus());
     }
 }
