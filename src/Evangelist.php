@@ -1,6 +1,7 @@
 <?php
 
 namespace Elchroy\OSE;
+
 use GuzzleHttp\Client;
 
 /**
@@ -26,7 +27,7 @@ class Evangelist
 
     public function __call($method, $args)
     {
-       return $this->has($method) ? $this->callUser($method) : $this->throwNoMethodException($method);
+        return $this->has($method) ? $this->callUser($method) : $this->throwNoMethodException($method);
     }
 
     public function useProperties($property)
@@ -66,7 +67,7 @@ class Evangelist
 
     public function level()
     {
-      $repos = $this->numPublicRepos();
+        $repos = $this->numPublicRepos();
         if ($repos >= 0 && $repos <= 10) {
             return $level = 1;
         }
@@ -81,16 +82,16 @@ class Evangelist
     public function has($property)
     {
         // (func_num_args() != 1) ? $this->NumArgumentException(1) : '';
-        return (bool) (in_array($property, $this->properties()) || method_exists($this, $property));# ? 'true' : 'false';
+        return (bool) (in_array($property, $this->properties()) || method_exists($this, $property)); // ? 'true' : 'false';
     }
 
     private function throwNoMethodException($method)
     {
-      throw new NoMethodException($this->login, $method);
+        throw new NoMethodException($this->login, $method);
     }
 
     private function throwNumArgumentException($number)
     {
-      throw new NumArgumentException($number);
+        throw new NumArgumentException($number);
     }
 }
