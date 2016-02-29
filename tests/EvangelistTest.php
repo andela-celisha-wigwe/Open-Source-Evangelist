@@ -4,6 +4,10 @@ use Elchroy\OSE\Evangelist;
 
 class EvangelistTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * [$data description].
+     * @var [type]
+     */
     public $data = [
                 ['name', 'Elisha-Wigwe Chijioke O.'],
                 ['repos', 2],
