@@ -10,6 +10,7 @@ class EvangelistStatus
 {
     /**
      * $ranks The possible ranks that a GitHub user can attain.
+     *
      * @var array An associative array.
      */
     public static $ranks = [
@@ -20,6 +21,7 @@ class EvangelistStatus
 
     /**
      * $messages The possible status messages that can be related to the user.
+     *
      * @var array An associative array.
      */
     public $messages = [
@@ -29,13 +31,15 @@ class EvangelistStatus
         ];
 
     /**
-     * $evangelist The public variable that takes up the user object data
+     * $evangelist The public variable that takes up the user object data.
+     *
      * @var [type]
      */
     public $evangelist;
 
     /**
      * __construct First create a new evangelist and assign to the public evangelist variable.
+     *
      * @param string $username The username of the user whose status is required.
      */
     public function __construct($username)
@@ -45,6 +49,7 @@ class EvangelistStatus
 
     /**
      * getStatus This function return the status of the evangelist user.
+     *
      * @return string The status message to be related to the user.
      */
     public function getStatus()
