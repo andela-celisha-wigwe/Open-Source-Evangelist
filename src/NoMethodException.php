@@ -4,16 +4,10 @@ namespace Elchroy\OSE;
 
 class NoMethodException extends \Exception
 {
-    public $message;
-
-    public function __construct($method)
+    public function __construct($username ,$method)
     {
-        set_exception_handler([$this, 'catchException']);
-        $this->message = "Method Error: '$method'. Probably the user does not have this feature.";
+        $message = "Method Error: '$method' : $username may not have this feature.";
+        return parent::__construct($message);
     }
 
-    public function catchException()
-    {
-        echo $this->message;
-    }
 }
