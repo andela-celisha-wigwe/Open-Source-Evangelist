@@ -26,7 +26,7 @@ class EvangelistStatus
     public function getStatus()
     {
         $level = $this->evangelist->level;
+
         return $this->message[$level];
     }
-
 }
