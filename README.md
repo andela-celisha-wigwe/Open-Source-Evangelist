@@ -23,6 +23,10 @@ Install Composer.
 
 ##Usage
 
+There are two main ways to use this package.
+
+**// Ensure to have a valid GitHub username.**
+
 ###1 Through the EvangelistStatus class.
 
 -Use (Import) the package.
@@ -66,6 +70,8 @@ echo $evangelist->company;
 ==> "Andela"
 echo $evangelist->type;
 ==> "User"
+echo $evangelist->rank;
+==> 1
 echo $evangelist->following;
 ==> 1
 echo $evangelist->organizations_url;
