@@ -4,11 +4,7 @@ use Elchroy\OSE\Evangelist;
 
 class EvangelistTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * [$data description].
-     * @var [type]
-     */
-    public $data = [
+   public $data = [
                 ['name', 'Elisha-Wigwe Chijioke O.'],
                 ['repos', 2],
                 ['status', 'Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist'],
@@ -52,6 +48,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException Elchroy\OSE\NoMethodException
      * @expectedExceptionMessage Method Error: 'noProperty' : andela-celisha-wigwe may not have this feature.
+     *
      * @return [type] [description]
      */
     public function testCallMagicMethodFailsIfTheMissingFunctionIsNotAPropertyInTheUserProperties()
