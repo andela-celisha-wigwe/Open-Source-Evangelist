@@ -4,12 +4,10 @@
 
 # Open-Source-Evangelist
 
-##*Check Point 1B*
-
-##Open Source Evangelist Agnostic PHP Package
+##*Check Point 1B* - Open Source Evangelist Agnostic PHP Package
 This is the Open-Source-Evangelist repository.
 
-It is a package that shows the Github rank for the any user.
+It is a package that shows the Github rank and status for any user.
 
 ##Installation
 
@@ -55,33 +53,23 @@ $evangelist = new Evangelist('andela-celisha-wigwe');
 echo $evangelist->status();
 ==> Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist
 ```
-**Note that you can also get the status like this:**
+**You can also get the status like this:**
 ```
 echo $evangelist->status; // Without using the parentheses.
 ==> Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist
 ```
-
-###3 Through PsySh *(Optional)*
-You can run this package if you have appropriately installed (globally) [PsySh](https://http://psysh.org/) on your machine.
-
-**Ensure to cd into the root of the application directory.**
--Load The package and its dependencies.
+**You can get more user details through this way, as long as such information is available from GitHub.**
 ```
->>> require 'vendor/autoload.php';
-```
-
--Make a new instance of the class.
-```
->>> $evangelist = new Elchroy\OSE\Evangelist('andela-celisha-wigwe'); // Using the Evangelist class.
-**OR**
->>> $evangelistStatus = new Elchroy\OSE\EvangelistStatus('andela-celisha-wigwe'); // Using the EvangelistStatus class.
-```
-
--Display the user's status.
-```
->>> echo $evangelist->status(); // Using the Evangelist class.
-OR
->>> echo $evangelistStatus->getStatus();
+echo $evangelist->url;
+==> "https://api.github.com/users/andela-celisha-wigwe"
+echo $evangelist->company;
+==> "Andela"
+echo $evangelist->type;
+==> "User"
+echo $evangelist->following;
+==> 1
+echo $evangelist->organizations_url;
+==> "https://api.github.com/users/andela-celisha-wigwe/orgs"
 ```
 
 ##Test
