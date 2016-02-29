@@ -60,11 +60,10 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
         }
     }
 
-
     public function testRankFunctionWorksFordifferentCases()
     {
         $newEvangelist = new Evangelist('roy');
-        $data = array(
+        $data = [
                 [1, 1],
                 [5, 1],
                 [10, 1],
@@ -74,12 +73,11 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
                 [21, 3],
                 [30, 3],
                 [100000, 3],
-            );
+            ];
         foreach ($data as $d) {
             $newEvangelist->user->public_repos = $d[0];
             $level = $newEvangelist->level();
             $this->assertEquals($d[1], $level);
         }
     }
-
 }
