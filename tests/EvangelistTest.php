@@ -6,7 +6,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
 {
     public $data = [
                 ['name', 'Elisha-Wigwe Chijioke O.'],
-                ['numPublicRepos', 2],
+                ['repos', 2],
                 ['status', 'Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist'],
                 ['rank', 'Junior Evangelist'],
                 ['level', 1],
@@ -39,15 +39,15 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
         $this->evangelist->noStatus;
     }
 
-    public function testNameFunctionReturnTheNameOfTheGitHubUser()
+    public function testNameFunctionReturnsTheNameOfTheGitHubUser()
     {
         $name = $this->evangelist->name();
         $this->assertEquals('Elisha-Wigwe Chijioke O.', $name);
     }
 
-    public function testNumOfPublicReposFunctionWorks()
+    public function testNumOfReposFunctionWorks()
     {
-        $repos = $this->evangelist->numPublicRepos();
+        $repos = $this->evangelist->repos();
         $this->assertEquals(2, $repos);
     }
 
