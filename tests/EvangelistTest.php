@@ -97,4 +97,13 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($d[1], $level);
         }
     }
+
+    /**
+     * @expectedException Elchroy\OSE\WrongUserException
+     * @expectedExceptionMessage Blank/Empty username.
+     */
+    public function testWrongUserExceptionFunctionWorksAndThrowError()
+    {
+        new Evangelist('');
+    }
 }
