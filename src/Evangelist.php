@@ -196,5 +196,4 @@ class Evangelist
     {
         throw new WrongUserException($message);
     }
-
 }

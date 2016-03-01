@@ -7,8 +7,8 @@ namespace Elchroy\OSE;
  */
 class OSEException extends \Exception
 {
-
     public $message;
+
     /**
      * __construct First compose a custom message with the user name and the method being called.
      *
