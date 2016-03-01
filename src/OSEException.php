@@ -23,6 +23,6 @@ abstract class OSEException extends \Exception
 
     public function catchExceptions()
     {
-        echo $this->message;
+        return $this->message;
     }
 }
