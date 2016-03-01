@@ -14,7 +14,6 @@ class WrongUserException extends OSEException
      */
     public function __construct($message)
     {
-        return "Faulty Username: " . parent::__construct($message);
+        return 'Faulty Username: '.parent::__construct($message);
     }
-
 }
