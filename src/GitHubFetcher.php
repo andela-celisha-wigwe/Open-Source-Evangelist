@@ -4,7 +4,7 @@ namespace Elchroy\OSE;
 
 use GuzzleHttp\Client;
 
-abstract class GitHubFetcher
+class GitHubFetcher
 {
     public static function fetchGit($username)
     {

@@ -22,6 +22,7 @@ class Evangelist
      */
     public function __construct($username)
     {
+        empty($username) ? $this->wrongUserException('Blank/Empty username.') : '';
         $user = self::fetchGitHub($username);
         $this->user = json_decode($user);
     }
@@ -157,8 +158,8 @@ class Evangelist
      */
     public function has($property)
     {
-        // (func_num_args() != 1) ? $this->NumArgumentException(1) : '';
-        return (bool) (in_array($property, $this->properties()) || method_exists($this, $property)); // ? 'true' : 'false';
+        (func_num_args() != 1) ? $this->NumArgumentException(1) : '';
+        return (bool) (in_array($property, $this->properties()) || method_exists($this, $property));
     }
 
     /**
@@ -180,13 +181,15 @@ class Evangelist
      *
      * @return [type] [description]
      */
-    private function throwNumArgumentException($number)
-    {
-        throw new NumArgumentException($number);
-    }
 
     private function fetchGitHub($username)
     {
         return $client = GitHubFetcher::fetchGit($username);
     }
+
+    private function wrongUserException($message)
+    {
+        throw new WrongUserException($message);
+    }
+
 }
