@@ -24,9 +24,8 @@ class Evangelist
      */
     public function __construct($username)
     {
-        $client = new Client();
-        $result = ($client->request('GET', "https://api.github.com/users/$username?client_id=42b7bfa66ecb6cb47cc1&client_secret=32d87cdfbaf8245ccdea6005d62f8587724bc2a5")->getBody());
-        $this->user = json_decode($result);
+        $user = self::fetchGitHub($username);
+        $this->user = json_decode($user);
     }
 
     /**
@@ -178,5 +177,10 @@ class Evangelist
     private function throwNumArgumentException($number)
     {
         throw new NumArgumentException($number);
+    }
+
+    private function fetchGitHub($username)
+    {
+      return $client = GitHubFetcher::fetchGit($username);
     }
 }
