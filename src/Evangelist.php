@@ -158,7 +158,6 @@ class Evangelist
      */
     public function has($property)
     {
-        (func_num_args() != 1) ? $this->NumArgumentException(1) : '';
         return (bool) (in_array($property, $this->properties()) || method_exists($this, $property));
     }
 
@@ -175,18 +174,24 @@ class Evangelist
     }
 
     /**
-     * throwNumArgumentException Private function to throw an exception. It is called by some other public functions.
+     * fetchGitHub Private function to fetch the user using Guzzle Client.
      *
-     * @param [type] $number [description]
+     * @param string $username The user to be found using his username
      *
-     * @return [type] [description]
+     * @return [type] The JSON encoded user data for the requested user.
      */
-
     private function fetchGitHub($username)
     {
         return $client = GitHubFetcher::fetchGit($username);
     }
 
+    /**
+     * wrongUserException Private function to throw an exception when the username that was passed is empty.
+     *
+     * @param string $message The message to be related to the user when the exception is thrown.
+     *
+     * @return [type] An exception of the WrongUserException class.
+     */
     private function wrongUserException($message)
     {
         throw new WrongUserException($message);
