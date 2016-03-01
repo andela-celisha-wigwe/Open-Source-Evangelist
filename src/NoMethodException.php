@@ -5,7 +5,7 @@ namespace Elchroy\OSE;
 /**
  * The NoMethosExcetipon class that throws an Exception with a customised message.
  */
-class NoMethodException extends \Exception
+class NoMethodException extends OSEException
 {
     /**
      * __construct First compose a custom message with the user name and the method being called.
