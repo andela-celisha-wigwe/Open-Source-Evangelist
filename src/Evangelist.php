@@ -2,8 +2,6 @@
 
 namespace Elchroy\OSE;
 
-use GuzzleHttp\Client;
-
 /**
  * This is the Envagelist Class of GitHub.com users. It manages and ranks users based on certain criteria.
  */
@@ -12,7 +10,7 @@ class Evangelist
     /**
      * $user Public variable to collect the JSON decoded user data.
      *
-     * @var Object
+     * @var object
      */
     public $user;
 
@@ -31,6 +29,7 @@ class Evangelist
     /**
      * __get Magic method - Call a method if it is called by the user but without the parentheses.
      * If the method does not exist the use the user's properties.
+     *
      * @param string $func the function to be called if exists
      *
      * @return [type]
@@ -42,8 +41,9 @@ class Evangelist
 
     /**
      * __call Magic method - Call a user property if there is no defined method to return that particular user information.
-     * @param  string $method The method that does not exist but might exist among the list of all properties.
-     * @param  string $args   The argument to be passed to the $method, if the $method requires.
+     *
+     * @param string $method The method that does not exist but might exist among the list of all properties.
+     * @param string $args   The argument to be passed to the $method, if the $method requires.
      *
      * @return [type] The return value of calling the method with the arguments (if any). Otherwise throw an Exception.
      */
@@ -54,6 +54,7 @@ class Evangelist
 
     /**
      * useProperties If the user has a given property, call the property. Otherwise throw an Exception.
+     *
      * @param string $property The function to be called.
      *
      * @return [type] The return value of the function or an Exception.
@@ -65,6 +66,7 @@ class Evangelist
 
     /**
      * [callUser This funciton is called by useProperties method to fetch some  user property from the user data.
+     *
      * @param string $property The property to be retrieved.
      *
      * @return [type] The value of the property to be retrieved.
@@ -142,14 +144,16 @@ class Evangelist
         if ($repos >= 21) {
             $level = 3;
         }
+
         return $level;
     }
 
     /**
      * has This function checks whether the user has a given property.
-     * @param string  $property The property to be checked against the user.
      *
-     * @return boolean True if the user has the function. False otherwise.
+     * @param string $property The property to be checked against the user.
+     *
+     * @return bool True if the user has the function. False otherwise.
      */
     public function has($property)
     {
@@ -159,6 +163,7 @@ class Evangelist
 
     /**
      * throwNoMethodException Private function to throw an exception. It is called by some other public functions.
+     *
      * @param [type] $method [description]
      *
      * @return [type] [description]
@@ -170,6 +175,7 @@ class Evangelist
 
     /**
      * throwNumArgumentException Private function to throw an exception. It is called by some other public functions.
+     *
      * @param [type] $number [description]
      *
      * @return [type] [description]
@@ -181,6 +187,6 @@ class Evangelist
 
     private function fetchGitHub($username)
     {
-      return $client = GitHubFetcher::fetchGit($username);
+        return $client = GitHubFetcher::fetchGit($username);
     }
 }

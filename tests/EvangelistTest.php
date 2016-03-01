@@ -4,7 +4,7 @@ use Elchroy\OSE\Evangelist;
 
 class EvangelistTest extends PHPUnit_Framework_TestCase
 {
-   public $data = [
+    public $data = [
                 ['name', 'Elisha-Wigwe Chijioke O.'],
                 ['repos', 2],
                 ['status', 'Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist'],
