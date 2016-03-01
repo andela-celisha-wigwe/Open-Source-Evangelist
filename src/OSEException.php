@@ -5,7 +5,7 @@ namespace Elchroy\OSE;
 /**
  * The OSEException class that throws an Exception with a customised message.
  */
-abstract class OSEException extends \Exception
+class OSEException extends \Exception
 {
 
     public $message;
@@ -18,7 +18,7 @@ abstract class OSEException extends \Exception
     public function __construct($message)
     {
         $this->message = $message;
-        set_exception_handler([$this, 'catchExceptions']);
+        // set_exception_handler([$this, 'catchExceptions']);
     }
 
     public function catchExceptions()
