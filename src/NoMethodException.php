@@ -7,7 +7,6 @@ namespace Elchroy\OSE;
  */
 class NoMethodException extends OSEException
 {
-
     /**
      * __construct First compose a custom message with the user name and the method being called.
      *
