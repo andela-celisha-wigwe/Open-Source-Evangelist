@@ -3,7 +3,7 @@
 namespace Elchroy\OSE;
 
 /**
- * The NoMethosExcetipon class that throws an Exception with a customised message.
+ * The NoMethosExcetipon class that throws an Exception, when the method being called does not exist, with a customised message.
  */
 class NoMethodException extends OSEException
 {
