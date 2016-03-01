@@ -1,6 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/andela-celisha-wigwe/Open-Source-Evangelist/badge.svg?branch=develop)](https://coveralls.io/github/andela-celisha-wigwe/Open-Source-Evangelist?branch=develop)
-[![Build Status](https://travis-ci.org/andela-celisha-wigwe/Open-Source-Evangelist.svg?branch=master)](https://travis-ci.org/andela-celisha-wigwe/Open-Source-Evangelist)
-![StyleCI](https://styleci.io/repos/52610358/shield)](https://styleci.io/repos/52610358)
+[![Build Status](https://travis-ci.org/andela-celisha-wigwe/Open-Source-Evangelist.svg?branch=develop)](https://travis-ci.org/andela-celisha-wigwe/Open-Source-Evangelist)
+[![StyleCI](https://styleci.io/repos/52610358/shield)](https://styleci.io/repos/52610358)
 
 # Open-Source-Evangelist
 
@@ -25,34 +25,34 @@ Install Composer.
 
 There are two main ways to use this package.
 
-**// Ensure to have a valid GitHub username.**
+**Ensure to have a valid GitHub username.**
 
-###1 Through the EvangelistStatus class.
+###1. Through the EvangelistStatus class
 
--Use (Import) the package.
+* Use (Import) the package.
 ```
 use Elchroy\OSE\EvangelistStatus;
 ```
--Make a new status instance. (You need a [GitHub.com](https://github.com) username.)
+* Make a new status instance. (You need a [GitHub.com](https://github.com) username.)
 ```
 $evangelistStatus = new EvangelistStatus('andela-celisha-wigwe');
 ```
--Request for the user's status.
+* Request for the user's status.
 ```
 echo $evangelistStatus->getStatus();
 // Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist
 ```
 
-###2 Through the Evangelist class.
--Import the package.
+###2. Through the Evangelist class
+* Import the package.
 ```
 use Elchroy\OSE\Evangelist;
 ```
--Make a new evangelist. (You need a [GitHub.com](https://github.com) username.)
+* Make a new evangelist. (You need a [GitHub.com](https://github.com) username.)
 ```
 $evangelist = new Evangelist('andela-celisha-wigwe');
 ```
--Request for user's status.
+* Request for user's status.
 ```
 echo $evangelist->status();
 ==> Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist
@@ -82,6 +82,6 @@ echo $evangelist->organizations_url;
 
 To test this package, you can use [PHPUnit](https://phpunit.de/), from command line (WindowsOS) or terminal(MacOS).
 
-`$ phpunit`
-
 **Note: Ensure that you are with the directory of the application.**
+
+`$ phpunit`
