@@ -6,7 +6,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
 {
     public $data = [
                 ['name', 'Elisha-Wigwe Chijioke O.'],
-                ['repos', 2],
+                ['repos', 3],
                 ['status', 'Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist'],
                 ['rank', 'Junior Evangelist'],
                 ['level', 1],
@@ -65,7 +65,7 @@ class EvangelistTest extends PHPUnit_Framework_TestCase
     public function testNumOfReposFunctionWorks()
     {
         $repos = $this->evangelist->repos();
-        $this->assertEquals(2, $repos);
+        $this->assertEquals(3, $repos);
     }
 
     public function testAllPublicFunctionsWork()
